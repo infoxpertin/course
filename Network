@@ -1,0 +1,109 @@
+Networking 
+Learn the Basics: Understand how data moves by studying IP addresses, routers, switches, and the OSI model.
+Zero Touch Provision and Software Define Networking & SASE 
+Routing and Switching : Master essential routing and switching skills 
+Master the Command Line: Learn Python basics to automate repetitive network tasks.
+Move to the Cloud: Study cloud networking environments like AWS, Azure, or Google Cloud.
+Monitoring Tools: Learn how to analyze and Track traffic.
+
+Core Architecture & Physical Infrastructure
+Define business goals, bandwidth requirements, and high-availability targets.
+Design the high-level network topology covering Campus, Data Center, and WAN.
+Formulate a standardized IP addressing schema (IPv4/IPv6 subnets).
+Create a comprehensive VLAN ID allocation matrix for all network segments.
+Standardize hardware specifications for Layer 2 switches, Nexus, SD-WAN, WAPs, and SASE.
+Conduct site surveys for rack space, power availability, and cooling capacity.
+Verify circuit availability and coordinate with internet service providers (ISPs).
+Order hardware, licenses, and optical modules based on the approved design.
+Inspect delivered equipment for physical damage and verify serial numbers.
+Inventory all assets in the Configuration Management Database (CMDB).
+Mount Layer 2 switches, Nexus switches, and SD-WAN routers into designated racks.
+Run structured copper and fiber cabling adhering to color-code standards.
+Label all cables, ports, power chords, and equipment chassis clearly.
+Connect redundant power supplies to separate Power Distribution Units (PDUs).
+Perform initial power-on self-tests (POST) on all physical devices.
+
+Layer 2 Switch Deployment
+Establish out-of-band (OOB) management access via console ports.
+Upgrade switch firmware to the vendor-approved stable baseline image.
+Configure basic system settings including hostnames, banners, and time zones.
+Harden device access using SSH, complex local accounts, and password encryption.
+Configure AAA (Authentication, Authorization, and Accounting) via TACACS+ or RADIUS.
+Set up Management VLANs and assign static IP addresses to switches.
+Create and name data, voice, guest, IoT, and quarantine VLANs globally.
+Configure access ports with appropriate VLAN assignments and descriptions.
+Implement 802.1Q trunking on links connecting upstream distribution switches.
+Configure Multiple Spanning Tree Protocol (MSTP) or Rapid Per-VLAN Spanning Tree (RPVST+).
+Optimize Spanning Tree with PortFast and BPDU Guard on all edge ports.
+Configure Link Aggregation Control Protocol (LACP) EtherChannels for high bandwidth.
+Enable Loop Guard and Root Guard to prevent Spanning Tree topology issues.
+Implement Layer 2 security features like DHCP Snooping and Dynamic ARP Inspection (DAI).
+Enable Port Security with MAC address limits on sensitive access ports.
+Configure LLDP and CDP for neighbor discovery and asset tracking.
+Set up SNMPv3 or NetConf for network monitoring system integration.
+
+Data Center Nexus Switch 
+Initialize Cisco Nexus switches in Nx-OS mode or ACI mode based on design.
+Enable required feature sets including LACP, VPC, LLDP, and UDLD.
+Configure the Management VRF and dedicated out-of-band management interfaces.
+Set up Virtual Port Channels (vPC) domain, peer-keepalive link, and peer-link.
+Configure vPC member ports toward downstream servers and Layer 2 switches.
+Deploy a Spine-and-Leaf topology using VXLAN EVPN for data center fabric fabric.
+Configure Underlay routing using Open Shortest Path First (OSPF) or BGP.
+Define VXLAN Network Identifiers (VNIs) and Map them to specific VLANs.
+Configure Network Virtualization Edge (NVE) interfaces for VTEP peers.
+Implement Anycast Gateways on Leaf switches for seamless virtual machine migration.
+Configure Multi-Protocol BGP (MP-BGP) EVPN control plane for MAC/IP route advertisement.
+Set up Jumbo Frames by adjusting Maximum Transmission Units (MTU) to 9216 fabric-wide.
+Implement Quality of Service (QoS) classes for storage, data, and management traffic.
+Integrate hardware security policies using Router ACLs and Port ACLs.
+Configure Nexus Smart Licensing and register switches to the Cisco Smart Account.
+
+SD-WAN Router
+Initialize the SD-WAN controllers (vManage/Manager, vSmart/Validator, vBond/Bond).
+Generate and install security certificates across all SD-WAN controllers.
+Define the global SD-WAN fabric organization name and control parameters.
+Configure system properties on edge routers including System IP, Site ID, and Organization.
+Set up VPN 0 for WAN Transport connections (Internet, MPLS, 4G/5G).
+Configure VPN 512 for dedicated out-of-band management access.
+Set up Service-Side VPNs to route internal corporate traffic.
+Create SD-WAN localized policies for basic routing protocols like OSPF and BGP.
+Build centralized control policies to govern topology, routing, and service chaining.
+Create Application-Aware Routing (AAR) policies based on SLA metrics (loss, latency, jitter).
+Deploy Direct Internet Access (DIA) policies for trusted cloud SaaS applications.
+Configure localized data policies for access control lists and QoS queuing.
+Establish secure IPSec/DTLS control connections between edge routers and controllers.
+Validate BFD (Bidirectional Forwarding Detection) sessions across all WAN transports.
+
+Wireless Access Point (WAP) 
+Install and configure central Wireless LAN Controllers (WLCs) in high-availability pairs.
+Set up CAPWAP or Catalyst Center controllers for access point provisioning.
+Configure DHCP option 43/120 to provide WLC IP addresses to booting WAPs.
+Mount Access Points in surveyed locations adhering to spatial layout guidelines.
+Connect WAPs to PoE+ (Power over Ethernet) enabled Layer 2 switch ports.
+Verify AP enrollment, firmware synchronization, and successful controller registration.
+Create Service Set Identifiers (SSIDs) for Corporate, Guest, and IoT segments.
+Configure 802.1X enterprise authentication using EAP-TLS/PEAP for Corporate SSIDs.
+Set up a secure Captive Portal with web-auth for the Guest wireless network.
+Configure RF Profiles adjusting channel width, transmit power, and data rates.
+Enable CleanAir or equivalent features for real-time radio frequency interference mitigation.
+Configure wireless Quality of Service (QoS) mappings to prioritize voice and video.
+Implement Rogue AP detection and prevention mechanisms to secure the airwaves.
+
+Zero Touch Provisioning (ZTP) 
+Set up a local ZTP server infrastructure including DHCP, TFTP, HTTP, and DNS.
+Configure DHCP server scopes with Option 66, Option 67, or vendor-specific options.
+Create device baseline configuration templates within the orchestration engine.
+Map device MAC addresses or serial numbers to their specific configuration files.
+Connect the unconfigured network device to the ZTP-enabled network port.
+Boot the device to trigger an automatic DHCP request for ZTP server information.
+Download the designated software image and baseline configuration file automatically.
+Monitor the automated reboot and verify successful application of settings via ZTP logs.
+
+Network Automation
+Establish a centralized automation workstation with Python, Ansible, and Git installed.
+Build a secure Git repository to store, version, and collaborate on infrastructure code.
+Construct structured YAML Ansible inventories containing target device variables.
+Develop Ansible Playbooks or Python scripts to push standard configurations at scale.
+Implement API-driven workflows utilizing Netconf, Restconf, or vendor-specific REST APIs.
+Set up a CI/CD pipeline to automatically test, validate, and deploy changes safely.
